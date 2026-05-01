@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ─────────────────────────────────────────────
+   InstrutorPro — Design Tokens
+   Azul institucional: família do Gov.br (#1351B4),
+   deslocado ligeiramente (+saturação, tom mais frio)
+   para confiança sem associação direta ao governo.
+   Acento teal substitui o amarelo gov.br —
+   principal diferenciador visual da identidade.
+───────────────────────────────────────────── */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Superfície / texto base ── */
+  --color-background: #ffffff;
+  --color-foreground: #1B1B1B;
+  --color-surface:    #F8F9FA;
+  --color-border:     #DDE3EC;
+
+  /* ── Azul institucional (primário) ── */
+  --color-brand-50:  #EBF1FF;
+  --color-brand-100: #CCDAFF;
+  --color-brand-200: #99B6FF;
+  --color-brand-300: #5C8EF5;
+  --color-brand-400: #2D6EED;
+  --color-brand-500: #1558C0;   /* ← cor primária */
+  --color-brand-600: #0F4399;
+  --color-brand-700: #0A2F70;
+  --color-brand-800: #061C47;
+  --color-brand-900: #030D24;
+
+  /* ── Teal (acento — diferenciador do gov.br) ── */
+  --color-accent-50:  #E6F6F5;
+  --color-accent-100: #B3E5E3;
+  --color-accent-200: #6CCBC7;
+  --color-accent-300: #2DB0AB;
+  --color-accent-400: #0D9690;
+  --color-accent-500: #0A7C75;  /* ← acento principal */
+  --color-accent-600: #085F5A;
+  --color-accent-700: #054340;
+  --color-accent-800: #032927;
+  --color-accent-900: #011413;
+
+  /* ── Feedback semântico ── */
+  --color-success-light: #E3F5E1;
+  --color-success:       #168821;
+  --color-success-dark:  #0D5C16;
+
+  --color-error-light:   #FDE0DB;
+  --color-error:         #E52207;
+  --color-error-dark:    #9C1300;
+
+  --color-warning-light: #FFF4CC;
+  --color-warning:       #F0A500;  /* âmbar — distinto do #FFCD07 gov.br */
+  --color-warning-dark:  #B87800;
+
+  --color-info-light:    #EBF1FF;
+  --color-info:          #1558C0;
+
+  /* ── Escala neutra ── */
+  --color-gray-50:  #F8F9FA;
+  --color-gray-100: #EDEFF2;
+  --color-gray-200: #D9DDE6;
+  --color-gray-300: #B8BECB;
+  --color-gray-400: #8A92A3;
+  --color-gray-500: #5E6878;
+  --color-gray-600: #404857;
+  --color-gray-700: #2A3040;
+  --color-gray-800: #181E2A;
+  --color-gray-900: #0C1018;
+
+  /* ── Tipografia ── */
+  --font-sans: "Rawline", "Raleway", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
